@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Student{% endblock %}
+
+{% block body %}
+<h1>Add a Student</h1>
+{# {{ form(f) }} #}
+
+{{form_start(f,{'attr':{'novalidate':'novalidate'}})}} 
+{{form_label(f.nsc,"Inscription number :")}}
+{{form_widget(f.nsc,{'attr':{'class':'form-control'}})}}
+<div class="alert alert-danger">
+{{ form_errors(f.nsc) }}
+</div>
+{{form_label(f.email,"Email :")}}
+{{form_widget(f.email,{'attr':{'class':'form-control'}})}}
+<div class="alert alert-danger">
+{{ form_errors(f.email) }}
+</div>
+{{ form_widget(f.Submit,{'attr':{'class':'btn btn-success'}}) }}
+{{form_end(f)}}
+
+{% endblock %}
